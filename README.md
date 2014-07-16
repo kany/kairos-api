@@ -1,3 +1,5 @@
+## STILL UNDER DEVELOPMENT - NOT READY FOR PRODUCTION USE
+
 # Kairos
 
 Ruby gem for the Kairos facial recognition API - https://developer.kairos.io/

@@ -4,7 +4,7 @@ describe Kairos::Client do
 
   context "when working with the Enroll endpoint" do
     before do
-      @client = Kairos::Client.new(:app_id => "consumerid", :api_key => "consumersecret")
+      @client = Kairos::Client.new(:app_id => "consumerid", :app_key => "consumersecret")
     end
 
     describe "'Enroll'" do

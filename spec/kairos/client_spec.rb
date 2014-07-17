@@ -30,7 +30,7 @@ describe Kairos::Client do
       before do
         @config = {
           :app_id          => 'zz',
-          :api_key         => 'ak',
+          :app_key         => 'ak',
           :url             => 'of',
           :subject_id      => 'ep',
           :gallery_name    => 'ua',

@@ -17,7 +17,7 @@ describe Kairos::Configuration do
     end
   end
 
-  Kairos::Configuration::VALID_CONFIG_KEYS.each do |key|
+  Kairos::Configuration::VALID_CONNECTION_KEYS.each do |key|
     describe ".#{key}" do
       it 'should return the default value' do
         Kairos.send(key).should eq( Kairos::Configuration.const_get("DEFAULT_#{key.upcase}") )

@@ -45,6 +45,12 @@ Takes an image and stores it as a face template into a gallery you define
 6. Kairos::Client.gallery_remove_subject(gallery_name, subject_id):
  - Removes a subject from a specified gallery
 
+## To Do List
+1) Trim unnessary gem dependencies
+2) Expand documentation
+3) Expand test specs to cover more scenarios and edge cases
+4) DRY up code where possible
+
 ## Contributing
 
 1. Fork it

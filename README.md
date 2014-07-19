@@ -20,11 +20,15 @@ Or install it yourself as:
 https://developer.kairos.io/docs
 
 1. Kairos::Client.enroll(url, subject_id, gallery_name):
- - Takes an image and stores it as a face template into a gallery you define
+
+Takes an image and stores it as a face template into a gallery you define
 
     $ require 'kairos'
+
     $ client = Kairos::Client.new(:app_id => '1234', :app_key => 'abcde1234')
+
     $ client.enroll(:url => 'https://some.url.com/to_some.jpg', :subject_id => 'gemtest', :gallery_name => 'testgallery')
+
 
 2. Kairos::Client.recognize(url, gallery_name, threshold, max_num_results):
  - Takes an image and tries to match it against the already enrolled images in a gallery you define

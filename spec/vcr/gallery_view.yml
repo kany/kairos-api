@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.kairos.io/gallery/view
+    body:
+      encoding: UTF-8
+      string: '{"gallery_name":"testgallery"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/x-www-form-urlencoded
+      App-Id:
+      - abc1234
+      App-Key:
+      - asdfadsfasdfasdfasdf
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty/1.2.8.6
+      Date:
+      - Sat, 19 Jul 2014 20:29:47 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Content-Length:
+      - '142'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"time\": 0.00287,\n\t\"status\": \"Complete\",\n\t\"subject_ids\":
+        [\n\t\t\"gemtest\",\n\t\t\"gemtest\",\n\t\t\"gemtest\",\n\t\t\"gemtest\",\n\t\t\"gemtest\",\n\t\t\"gemtest\"\n\t]\n}"
+    http_version: 
+  recorded_at: Sat, 19 Jul 2014 20:29:37 GMT
+recorded_with: VCR 2.9.2

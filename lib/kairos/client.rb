@@ -69,6 +69,16 @@ module Kairos
       post_to_api(Kairos::Configuration::GALLERY_LIST_ALL)
     end
 
+    # View subjects in Gallery
+    #
+    # Example Usage:
+    #  - require 'kairos'
+    #  - client = Kairos::Client.new(:app_id => '1234', :app_key => 'abcde1234')
+    #  - client.gallery_view(:gallery_name => 'testgallery')
+    def gallery_view(options={})
+      post_to_api(Kairos::Configuration::GALLERY_VIEW, options)
+    end
+
     private
 
     def post_to_api(endpoint, options={})

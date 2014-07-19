@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.kairos.io/detect
+    body:
+      encoding: UTF-8
+      string: '{"url":"http://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Seal_of_the_US_Air_Force.svg/356px-Seal_of_the_US_Air_Force.svg.png","selector":"FULL"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/x-www-form-urlencoded
+      App-Id:
+      - abc1234
+      App-Key:
+      - asdfadsfasdfasdfasdf
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty/1.2.8.6
+      Date:
+      - Sat, 19 Jul 2014 15:56:44 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Content-Length:
+      - '54'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '["errors:"{"Errcode":5002,"Message":No face(s) found}]'
+    http_version: 
+  recorded_at: Sat, 19 Jul 2014 15:56:35 GMT
+recorded_with: VCR 2.9.2

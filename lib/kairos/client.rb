@@ -54,7 +54,7 @@ module Kairos
     def post_to_api(endpoint, options)
       connection = api_set_connection(endpoint)
       response   = api_post(connection, options)
-      JSON.parse(response.body) rescue response.body
+      JSON.parse(response.body) rescue "INVALID_JSON: #{response.body}"
     end
 
     def api_set_connection(endpoint)

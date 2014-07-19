@@ -40,7 +40,7 @@ describe Kairos::Client do
         end
         describe 'response' do
           it 'should not recognize an image' do
-            @response.should eq("{\n\t\"images\": [\n\t\t{\n\t\t\t\"transaction\": {\n\t\t\t\t\"status\": \"failure\",\n\t\t\t\t\"message\": \"No match found\",\n\t\t\t\t\"subject\": image123abc,\n\t\t\t\t\"confidence\": 0.56,\n\t\t\t\t\"threshold\": 0.8\n\t\t\t}\n\t\t}\n\t]\n}")
+            @response.should eq("INVALID_JSON: {\n\t\"images\": [\n\t\t{\n\t\t\t\"transaction\": {\n\t\t\t\t\"status\": \"failure\",\n\t\t\t\t\"message\": \"No match found\",\n\t\t\t\t\"subject\": image123abc,\n\t\t\t\t\"confidence\": 0.56,\n\t\t\t\t\"threshold\": 0.8\n\t\t\t}\n\t\t}\n\t]\n}")
           end
         end
       end

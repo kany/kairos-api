@@ -28,7 +28,7 @@ describe Kairos::Client do
         it 'should accept any subject and try to remove it, if it exists' do
           VCR.use_cassette('gallery_remove_subject_with_unmatched_subject') do
             response = @client.gallery_remove_subject(:gallery_name => 'gemtest', :subject_id => 'abcdefghi')
-            response.should eq("{\n\t\"status\": \"complete\",\n\t\"message\": \"subject id abcdefghi has been successfully removed }")
+            response.should eq("INVALID_JSON: {\n\t\"status\": \"complete\",\n\t\"message\": \"subject id abcdefghi has been successfully removed }")
           end
         end
       end
@@ -40,7 +40,7 @@ describe Kairos::Client do
         end
         describe 'response' do
           it 'subject is removed from gallery' do
-            @response.should eq("{\n\t\"status\": \"complete\",\n\t\"message\": \"subject id image123abc has been successfully removed }")
+            @response.should eq("INVALID_JSON: {\n\t\"status\": \"complete\",\n\t\"message\": \"subject id image123abc has been successfully removed }")
           end
         end
       end

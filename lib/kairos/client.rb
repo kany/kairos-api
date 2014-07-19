@@ -26,9 +26,7 @@ module Kairos
     #  - client = Kairos::Client.new(:app_id => '1234', :app_key => 'abcde1234')
     #  - client.enroll(:url => 'https://some.url.com/to_some.jpg', :subject_id => 'gemtest', :gallery_name => 'testgallery')
     def enroll(options={})
-      connection = api_set_connection(Kairos::Configuration::ENROLL)
-      response   = api_post(connection, options)
-      response.body
+      post_to_api(Kairos::Configuration::ENROLL, options)
     end
 
     # Recognize an Image
@@ -38,12 +36,16 @@ module Kairos
     #  - client = Kairos::Client.new(:app_id => '1234', :app_key => 'abcde1234')
     #  - client.recognize(:url => 'https://some.url.com/to_some_other_image.jpg', :gallery_name => 'testgallery', :threshold => '.2', :max_num_results => '5')
     def recognize(options={})
-      connection = api_set_connection(Kairos::Configuration::RECOGNIZE)
-      response   = api_post(connection, options)
-      response.body
+      post_to_api(Kairos::Configuration::RECOGNIZE, options)
     end
 
     private
+
+    def post_to_api(endpoint, options)
+      connection = api_set_connection(endpoint)
+      response   = api_post(connection, options)
+      response.body
+    end
 
     def api_set_connection(endpoint)
       Faraday.new(:url => endpoint) do |builder|

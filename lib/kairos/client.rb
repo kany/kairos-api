@@ -39,19 +39,27 @@ module Kairos
       post_to_api(Kairos::Configuration::RECOGNIZE, options)
     end
 
+    # Remove Subject from Gallery
+    #
+    # Example Usage:
+    #  - require 'kairos'
+    #  - client = Kairos::Client.new(:app_id => '1234', :app_key => 'abcde1234')
+    #  - client.gallery_remove_subject(:gallery_name => 'testgallery', :subject_id => 'gemtest')
+    def gallery_remove_subject(options={})
+      post_to_api(Kairos::Configuration::GALLERY_REMOVE_SUBJECT, options)
+    end
+
     private
 
     def post_to_api(endpoint, options)
       connection = api_set_connection(endpoint)
       response   = api_post(connection, options)
-      response.body
+      JSON.parse(response.body) rescue response.body
     end
 
     def api_set_connection(endpoint)
       Faraday.new(:url => endpoint) do |builder|
-        builder.response :logger
         builder.use Faraday::Adapter::NetHttp
-        builder.use FaradayMiddleware::ParseJson
       end
     end
 

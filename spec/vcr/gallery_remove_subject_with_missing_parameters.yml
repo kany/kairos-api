@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: http://api.kairos.io/recognize
+    uri: http://api.kairos.io/gallery/remove_subject
     body:
       encoding: UTF-8
-      string: '{"url":"http://upload.wikimedia.org/wikipedia/commons/f/f9/Obama_portrait_crop.jpg","gallery_name":"randomgallery"}'
+      string: '{"gallery_name":"gemtest"}'
     headers:
       User-Agent:
       - Faraday v0.8.9
@@ -27,18 +27,17 @@ http_interactions:
       Server:
       - ngx_openresty/1.2.8.6
       Date:
-      - Sat, 19 Jul 2014 06:30:34 GMT
+      - Sat, 19 Jul 2014 06:36:07 GMT
       Content-Type:
       - text/html; charset=UTF-8
       Content-Length:
-      - '183'
+      - '127'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: "{\n\t\"images\": [\n\t\t{\n\t\t\t\"transaction\": {\n\t\t\t\t\"status\":
-        \"failure\",\n\t\t\t\t\"message\": \"No match found\",\n\t\t\t\t\"subject\":
-        image123abc,\n\t\t\t\t\"confidence\": 0.56,\n\t\t\t\t\"threshold\": 0.8\n\t\t\t}\n\t\t}\n\t]\n}"
+      string: "{\n\t\"Errors\": [\n\t\t{\n\t\t\t\"ErrorCode\": 5006,\n\t\t\t\"Message\":
+        \"the following required parameter is not included:  subject_id\"\n\t\t}\n\t]\n}"
     http_version: 
-  recorded_at: Sat, 19 Jul 2014 06:30:25 GMT
+  recorded_at: Sat, 19 Jul 2014 06:35:58 GMT
 recorded_with: VCR 2.9.2

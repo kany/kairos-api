@@ -52,3 +52,6 @@ Takes an image and stores it as a face template into a gallery you define
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## References
+Thank you to gregmoreno for creating this api template - https://github.com/gregmoreno/awesome

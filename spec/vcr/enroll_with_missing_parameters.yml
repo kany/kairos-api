@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.kairos.io/enroll
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://some.image.url/123abc.jpg","subject_id":"image123abc"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/x-www-form-urlencoded
+      App-Id:
+      - abc1234
+      App-Key:
+      - asdfadsfasdfasdfasdf
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty/1.2.8.6
+      Date:
+      - Sat, 19 Jul 2014 03:24:01 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Content-Length:
+      - '129'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"Errors\": [\n\t\t{\n\t\t\t\"ErrorCode\": 5006,\n\t\t\t\"Message\":
+        \"the following required parameter is not included:  gallery_name\"\n\t\t}\n\t]\n}"
+    http_version: 
+  recorded_at: Sat, 19 Jul 2014 03:23:52 GMT
+recorded_with: VCR 2.9.2

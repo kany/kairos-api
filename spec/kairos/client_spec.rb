@@ -58,7 +58,6 @@ describe Kairos::Client do
           api.send("#{key}").should eq(@config[key])
         end
       end
-
     end
 
   end

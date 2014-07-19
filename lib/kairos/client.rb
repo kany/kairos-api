@@ -22,30 +22,32 @@ module Kairos
     # Enroll an Image
     #
     # Example Usage:
-    #   require 'kairos'
-    #   client = Kairos::Client.new(:app_id => '1234', :app_key => 'abcde1234')
-    #   client.enroll(:url => 'https://some.url.com/to_some.jpg', :subject_id => 'gemtest', :gallery_name => 'testgallery')
+    #  - require 'kairos'
+    #  - client = Kairos::Client.new(:app_id => '1234', :app_key => 'abcde1234')
+    #  - client.enroll(:url => 'https://some.url.com/to_some.jpg', :subject_id => 'gemtest', :gallery_name => 'testgallery')
     def enroll(options={})
-      @connection = Faraday.new(:url => Kairos::Configuration::ENDPOINT_TO_ENROLL) do |builder|
+      connection = api_set_connection(Kairos::Configuration::ENROLL)
+      response   = api_post(connection, options)
+      response.body
+    end
+
+    private
+
+    def api_set_connection(endpoint)
+      Faraday.new(:url => endpoint) do |builder|
         builder.response :logger
         builder.use Faraday::Adapter::NetHttp
         builder.use FaradayMiddleware::ParseJson
       end
+    end
 
-      params_hash = {}
-      params_hash.merge!({"url"=>"#{options[:url]}"})
-      params_hash.merge!({"subject_id"=>"#{options[:subject_id]}"})
-      params_hash.merge!({"gallery_name"=>"#{options[:gallery_name]}"})
-
-      response = @connection.post do |request|
+    def api_post(connection, options)
+      connection.post do |request|
         request.headers['Content-Type'] = 'application/x-www-form-urlencoded'
         request.headers['app_id']       = @app_id
         request.headers['app_key']      = @app_key
-        request.body                    = params_hash.to_json
+        request.body                    = options.to_json
       end
-
-      response
     end
-
   end
 end

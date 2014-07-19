@@ -59,11 +59,21 @@ module Kairos
       post_to_api(Kairos::Configuration::DETECT, options)
     end
 
+    # List all Galleries
+    #
+    # Example Usage:
+    #  - require 'kairos'
+    #  - client = Kairos::Client.new(:app_id => '1234', :app_key => 'abcde1234')
+    #  - client.gallery_list_all
+    def gallery_list_all
+      post_to_api(Kairos::Configuration::GALLERY_LIST_ALL)
+    end
+
     private
 
-    def post_to_api(endpoint, options)
+    def post_to_api(endpoint, options={})
       connection = api_set_connection(endpoint)
-      response   = api_post(connection, options)
+      response   = options.empty? ? api_post(connection) : api_post(connection, options)
       JSON.parse(response.body) rescue "INVALID_JSON: #{response.body}"
     end
 
@@ -73,12 +83,12 @@ module Kairos
       end
     end
 
-    def api_post(connection, options)
+    def api_post(connection, options={})
       connection.post do |request|
         request.headers['Content-Type'] = 'application/x-www-form-urlencoded'
         request.headers['app_id']       = @app_id
         request.headers['app_key']      = @app_key
-        request.body                    = options.to_json
+        request.body                    = options.empty? ? nil : options.to_json
       end
     end
   end

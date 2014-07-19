@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.kairos.io/recognize
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://some.image.url/123abc.jpg","gallery_name":"randomgallery","threshold":".2","max_num_results":"5"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/x-www-form-urlencoded
+      App-Id:
+      - abc1234
+      App-Key:
+      - asdfadsfasdfasdfasdf
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty/1.2.8.6
+      Date:
+      - Sat, 19 Jul 2014 04:45:39 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Content-Length:
+      - '444'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"images\": [\n\t\t{\n\t\t\t\"time\": 2.02489,\n\t\t\t\"transaction\":
+        {\n\t\t\t\t\"status\": \"success\",\n\t\t\t\t\"face_id\": \"cc9424ff049026675b9f1ecccec2c076\",\n\t\t\t\t\"subject\":
+        \"image123abc\",\n\t\t\t\t\"confidence\": 1,\n\t\t\t\t\"gallery_name\": \"randomgallery\"\n\t\t\t},\n\t\t\t\"candidates\":
+        [\n\t\t\t\t{\n\t\t\t\t\t\"image456abc\": \"1\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"image789abc\":
+        \"2\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"image012abc\": \"3\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"image345abc\":
+        \"4\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"image678abc\": \"5\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t]\n}"
+    http_version: 
+  recorded_at: Sat, 19 Jul 2014 04:45:30 GMT
+recorded_with: VCR 2.9.2

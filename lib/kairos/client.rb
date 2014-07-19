@@ -31,6 +31,18 @@ module Kairos
       response.body
     end
 
+    # Recognize an Image
+    #
+    # Example Usage:
+    #  - require 'kairos'
+    #  - client = Kairos::Client.new(:app_id => '1234', :app_key => 'abcde1234')
+    #  - client.recognize(:url => 'https://some.url.com/to_some_other_image.jpg', :gallery_name => 'testgallery', :threshold => '.2', :max_num_results => '5')
+    def recognize(options={})
+      connection = api_set_connection(Kairos::Configuration::RECOGNIZE)
+      response   = api_post(connection, options)
+      response.body
+    end
+
     private
 
     def api_set_connection(endpoint)

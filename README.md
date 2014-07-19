@@ -19,7 +19,7 @@ Or install it yourself as:
 ## Usage
 https://developer.kairos.io/docs
 
-1. Kairos::Client.enroll(url, subject_id, gallery_name):
+1. Kairos::Client.enroll(:url => 'https://some.url.com/to_some.jpg', :subject_id => 'gemtest', :gallery_name => 'testgallery'):
 
 Takes an image and stores it as a face template into a gallery you define
 
@@ -29,20 +29,19 @@ Takes an image and stores it as a face template into a gallery you define
 
     $ client.enroll(:url => 'https://some.url.com/to_some.jpg', :subject_id => 'gemtest', :gallery_name => 'testgallery')
 
-
-2. Kairos::Client.recognize(url, gallery_name, threshold, max_num_results):
+2. Kairos::Client.recognize(:url => 'https://some.image.url/123abc.jpg', :gallery_name => 'randomgallery', :threshold => '.2', :max_num_results => '5'):
  - Takes an image and tries to match it against the already enrolled images in a gallery you define
 
-3. Kairos::Client.detect(url, selector):
+3. Kairos::Client.detect(:url => 'https://some.url.com/to_some.jpg', :selector => 'FULL'):
  - Takes an image and returns the facial features found within it
 
 4. Kairos::Client.gallery_list_all:
  - Lists out all the galleries you have subjects enrolled in
 
-5. Kairos::Client.gallery_view(gallery_name):
+5. Kairos::Client.gallery_view(:gallery_name => 'testgallery'):
  - Lists out all the subjects you have enrolled in a specified gallery
 
-6. Kairos::Client.gallery_remove_subject(gallery_name, subject_id):
+6. Kairos::Client.gallery_remove_subject(:gallery_name => 'randomgallery', :subject_id => 'image123abc'):
  - Removes a subject from a specified gallery
 
 ## To Do List

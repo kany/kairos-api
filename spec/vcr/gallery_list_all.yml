@@ -4,23 +4,17 @@ http_interactions:
     method: post
     uri: http://api.kairos.io/gallery/list_all
     body:
-      encoding: UTF-8
+      encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.8.9
+      - Typhoeus - https://github.com/typhoeus/typhoeus
       Content-Type:
       - application/x-www-form-urlencoded
       App-Id:
       - abc1234
       App-Key:
       - asdfadsfasdfasdfasdf
-      Content-Length:
-      - '0'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
@@ -29,17 +23,17 @@ http_interactions:
       Server:
       - ngx_openresty/1.2.8.6
       Date:
-      - Sat, 19 Jul 2014 20:10:45 GMT
+      - Sun, 20 Jul 2014 03:33:23 GMT
       Content-Type:
       - text/html; charset=UTF-8
       Content-Length:
-      - '65'
+      - '81'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: "{\n\t\"time\": 0.00189,\n\t\"status\": \"Complete\",\n\t\"gallery_ids\":
-        [\n\t]\n}"
+      string: "{\n\t\"time\": 0.00808,\n\t\"status\": \"Complete\",\n\t\"gallery_ids\":
+        [\n\t\t\"testgallery\"\n\t]\n}"
     http_version: 
-  recorded_at: Sat, 19 Jul 2014 20:10:35 GMT
+  recorded_at: Sun, 20 Jul 2014 03:33:12 GMT
 recorded_with: VCR 2.9.2

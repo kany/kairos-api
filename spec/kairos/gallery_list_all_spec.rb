@@ -23,7 +23,7 @@ describe Kairos::Client do
       end
       describe 'response' do
         it 'lists all galleries' do
-          @response.should eq({"time"=>0.00189, "status"=>"Complete", "gallery_ids"=>['testgallery']})
+          @response.should eq({"time"=>0.00808, "status"=>"Complete", "gallery_ids"=>["testgallery"]})
         end
       end
     end

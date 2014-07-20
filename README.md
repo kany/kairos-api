@@ -1,4 +1,4 @@
-# Kairos
+# Kairos-Api
 
 Ruby gem for the Kairos facial recognition API - https://developer.kairos.io/
 
@@ -45,10 +45,13 @@ Takes an image and stores it as a face template into a gallery you define
  - Removes a subject from a specified gallery
 
 ## To Do List
-1) Trim unnessary gem dependencies
-2) Expand documentation
-3) Expand test specs to cover more scenarios and edge cases
-4) DRY up code where possible
+1. Trim unnessary gem dependencies
+
+2. Expand documentation
+
+3. Expand test specs to cover more scenarios and edge cases
+
+4. DRY up code where possible
 
 ## Contributing
 

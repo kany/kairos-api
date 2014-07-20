@@ -6,7 +6,7 @@ Ruby gem for the Kairos facial recognition API - https://developer.kairos.io/
 
 Add this line to your application's Gemfile:
 
-    gem 'kairos'
+    gem 'kairos-api'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install kairos
+    $ gem install kairos-api
 
 ## Usage
 https://developer.kairos.io/docs

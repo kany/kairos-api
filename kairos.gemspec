@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'kairos/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "kairos"
+  spec.name          = "kairos-api"
   spec.version       = Kairos::VERSION
   spec.authors       = ["Frank Kany"]
   spec.email         = ["frankkany@gmail.com"]

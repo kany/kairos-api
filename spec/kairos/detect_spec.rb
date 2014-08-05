@@ -20,7 +20,7 @@ describe Kairos::Client do
         it 'should not detect faces' do
           VCR.use_cassette('detect_with_missing_parameters') do
             response = @client.detect(:selector => 'FULL')
-            response.should eq("INVALID_JSON: [\"errors:\"{\"Errcode\":5001,\"Message\":\"some unknown service error\"}]")
+            response.should eq({"errors"=>[{"Errcode"=>5001, "Message"=>"some unknown service error"}]})
           end
         end
       end
@@ -28,7 +28,7 @@ describe Kairos::Client do
         it 'should not detect faces' do
           VCR.use_cassette('detect_with_no_faces_in_image') do
             response = @client.detect(:url => 'http://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Seal_of_the_US_Air_Force.svg/356px-Seal_of_the_US_Air_Force.svg.png', :selector => 'FULL')
-            response.should eq("INVALID_JSON: [\"errors:\"{\"Errcode\":5002,\"Message\":No face(s) found}]")
+            response.should eq({"errors"=>[{"Errcode"=>5002, "Message"=>"No face(s) found"}]})
           end
         end
       end

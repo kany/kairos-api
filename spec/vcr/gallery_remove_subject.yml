@@ -27,17 +27,17 @@ http_interactions:
       Server:
       - ngx_openresty/1.2.8.6
       Date:
-      - Sat, 19 Jul 2014 06:41:17 GMT
+      - Tue, 05 Aug 2014 03:32:27 GMT
       Content-Type:
       - text/html; charset=UTF-8
-      Content-Length:
-      - '92'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: "{\n\t\"status\": \"complete\",\n\t\"message\": \"subject id image123abc
-        has been successfully removed }"
+        has been successfully removed\"\n}"
     http_version: 
-  recorded_at: Sat, 19 Jul 2014 06:41:08 GMT
+  recorded_at: Tue, 05 Aug 2014 03:32:25 GMT
 recorded_with: VCR 2.9.2

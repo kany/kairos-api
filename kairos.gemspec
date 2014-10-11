@@ -28,6 +28,6 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "faraday", "~> 0.8.0"
   spec.add_runtime_dependency "faraday_middleware", "~> 0.8.7"
-  spec.add_runtime_dependency "hashie", "~> 1.2.0"
+  spec.add_runtime_dependency "hashie", "> 1.2.0"
   spec.add_runtime_dependency "multi_json", "~> 1.3"
 end

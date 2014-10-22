@@ -70,7 +70,7 @@ module Kairos
       request = Typhoeus::Request.new(
         "#{Kairos::Configuration::GALLERY_LIST_ALL}",
         method: :post,
-        headers: { "Content-Type" => "application/x-www-form-urlencoded",
+        headers: { "Content-Type" => "application/json",
                    "app_id"       => "#{@app_id}",
                    "app_key"      => "#{@app_key}" }
       )
@@ -104,7 +104,7 @@ module Kairos
 
     def api_post(connection, options={})
       connection.post do |request|
-        request.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+        request.headers['Content-Type'] = 'application/json'
         request.headers['app_id']       = @app_id
         request.headers['app_key']      = @app_key
         request.body                    = options.empty? ? nil : options.to_json

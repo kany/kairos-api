@@ -63,3 +63,4 @@ Takes an image and stores it as a face template into a gallery you define
 
 ## References
 Thank you to gregmoreno for creating this api template - https://github.com/gregmoreno/awesome
+Test on [RapidAPI](https://rapidapi.com/package/KairosAPI/functions?utm_source=KairosGitHub&utm_medium=button)

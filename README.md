@@ -1,3 +1,5 @@
+I update this gem when I have time.  Would love to see some pull requests.
+
 # Kairos-Api
 
 Ruby gem for the Kairos facial recognition API - https://developer.kairos.io/

@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: http://api.kairos.io/detect
+    uri: https://api.kairos.com/detect
     body:
       encoding: UTF-8
       string: '{"url":"http://www.history.com/s3static/video-thumbnails/AETN-History_Prod/24/226/History_First_Combat_By_Black_Pilots_Speech_SF_still_624x352.jpg","selector":"FULL"}'
     headers:
       User-Agent:
-      - Faraday v0.8.9
+      - Faraday v0.8.11
       Content-Type:
       - application/x-www-form-urlencoded
       App-Id:
@@ -24,101 +24,29 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - ngx_openresty/1.2.8.6
-      Date:
-      - Sat, 19 Jul 2014 16:05:05 GMT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,app_key,app_id,api_key
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Api-Canonical:
+      - 58db0029a95fd4667556
       Content-Type:
-      - text/html; charset=UTF-8
+      - application/json
+      Date:
+      - Wed, 29 Mar 2017 00:30:34 GMT
+      Server:
+      - nginx/1.10.0 (Ubuntu)
       Content-Length:
-      - '6620'
+      - '531'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: "{\n\t\"images\": [\n\t\t{\n\t\t\t\"time\": 3.28787,\n\t\t\t\"status\":
-        \"Complete\",\n\t\t\t\"file\": \"http:\\/\\/www.history.com\\/s3static\\/video-thumbnails\\/AETN-History_Prod\\/24\\/226\\/History_First_Combat_By_Black_Pilots_Speech_SF_still_624x352.jpg\",\n\t\t\t\"width\":
-        624,\n\t\t\t\"height\": 352,\n\t\t\t\"faces\": [\n\t\t\t\t{\n\t\t\t\t\t\"topLeftX\":
-        428,\n\t\t\t\t\t\"topLeftY\": 54,\n\t\t\t\t\t\"width\": 74,\n\t\t\t\t\t\"height\":
-        74,\n\t\t\t\t\t\"leftEyeCenterX\": 453.28333333333,\n\t\t\t\t\t\"leftEyeCenterY\":
-        84.216666666667,\n\t\t\t\t\t\"rightEyeCenterX\": 477.95,\n\t\t\t\t\t\"rightEyeCenterY\":
-        77.125,\n\t\t\t\t\t\"noseTipX\": 464.41128389334,\n\t\t\t\t\t\"noseTipY\":
-        97.543807447067,\n\t\t\t\t\t\"noseBtwEyesX\": 462.93953972625,\n\t\t\t\t\t\"noseBtwEyesY\":
-        81.08648394164,\n\t\t\t\t\t\"chinTipX\": 478.58984310969,\n\t\t\t\t\t\"chinTipY\":
-        127.91363834176,\n\t\t\t\t\t\"leftEyeCornerLeftX\": 449.04375,\n\t\t\t\t\t\"leftEyeCornerLeftY\":
-        85.435546875,\n\t\t\t\t\t\"leftEyeCornerRightX\": 458.12994791667,\n\t\t\t\t\t\"leftEyeCornerRightY\":
-        83.6578125,\n\t\t\t\t\t\"rightEyeCornerLeftX\": 473.54661458333,\n\t\t\t\t\t\"rightEyeCornerLeftY\":
-        79.225520833333,\n\t\t\t\t\t\"rightEyeCornerRightX\": 483.73125,\n\t\t\t\t\t\"rightEyeCornerRightY\":
-        75.462890625,\n\t\t\t\t\t\"rightEarTragusX\": 504.41182109872,\n\t\t\t\t\t\"rightEarTragusY\":
-        85.76017844713,\n\t\t\t\t\t\"leftEarTragusX\": -1,\n\t\t\t\t\t\"leftEarTragusY\":
-        -1,\n\t\t\t\t\t\"leftEyeBrowLeftX\": 441.63314307609,\n\t\t\t\t\t\"leftEyeBrowLeftY\":
-        82.705854430062,\n\t\t\t\t\t\"leftEyeBrowMiddleX\": 446.30086991832,\n\t\t\t\t\t\"leftEyeBrowMiddleY\":
-        79.054246367575,\n\t\t\t\t\t\"leftEyeBrowRightX\": 454.52953166193,\n\t\t\t\t\t\"leftEyeBrowRightY\":
-        78.318374288683,\n\t\t\t\t\t\"rightEyeBrowLeftX\": 467.83281967694,\n\t\t\t\t\t\"rightEyeBrowLeftY\":
-        73.806501000062,\n\t\t\t\t\t\"rightEyeBrowMiddleX\": 476.97644023996,\n\t\t\t\t\t\"rightEyeBrowMiddleY\":
-        68.786568317925,\n\t\t\t\t\t\"rightEyeBrowRightX\": 486.67458656583,\n\t\t\t\t\t\"rightEyeBrowRightY\":
-        68.491315656652,\n\t\t\t\t\t\"nostrilLeftHoleBottomX\": 463.37193192656,\n\t\t\t\t\t\"nostrilLeftHoleBottomY\":
-        101.42096862064,\n\t\t\t\t\t\"nostrilRightHoleBottomX\": 470.53800851709,\n\t\t\t\t\t\"nostrilRightHoleBottomY\":
-        100.12008397689,\n\t\t\t\t\t\"nostrilLeftSideX\": 460.55735590944,\n\t\t\t\t\t\"nostrilLeftSideY\":
-        100.94662921507,\n\t\t\t\t\t\"nostrilRightSideX\": 474.79883593016,\n\t\t\t\t\t\"nostrilRightSideY\":
-        96.592869061641,\n\t\t\t\t\t\"lipCornerLeftX\": 466.09809436817,\n\t\t\t\t\t\"lipCornerLeftY\":
-        116.16002124809,\n\t\t\t\t\t\"lipLineMiddleX\": 472.20158580561,\n\t\t\t\t\t\"lipLineMiddleY\":
-        114.29412403948,\n\t\t\t\t\t\"lipCornerRightX\": 480.74647381804,\n\t\t\t\t\t\"lipCornerRightY\":
-        111.68186794742,\n\t\t\t\t\t\"pitch\": 3.894871137306,\n\t\t\t\t\t\"yaw\":
-        19.928029385591,\n\t\t\t\t\t\"roll\": -16.376846999339\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"topLeftX\":
-        331,\n\t\t\t\t\t\"topLeftY\": 74,\n\t\t\t\t\t\"width\": 70,\n\t\t\t\t\t\"height\":
-        70,\n\t\t\t\t\t\"leftEyeCenterX\": 353.75,\n\t\t\t\t\t\"leftEyeCenterY\":
-        97.166666666667,\n\t\t\t\t\t\"rightEyeCenterX\": 380.58333333333,\n\t\t\t\t\t\"rightEyeCenterY\":
-        101.54166666667,\n\t\t\t\t\t\"noseTipX\": 369.402552281,\n\t\t\t\t\t\"noseTipY\":
-        116.12289328391,\n\t\t\t\t\t\"noseBtwEyesX\": 368.62358703188,\n\t\t\t\t\t\"noseBtwEyesY\":
-        98.207841755884,\n\t\t\t\t\t\"chinTipX\": 362.98377957768,\n\t\t\t\t\t\"chinTipY\":
-        146.76653362108,\n\t\t\t\t\t\"leftEyeCornerLeftX\": 346.55403645833,\n\t\t\t\t\t\"leftEyeCornerLeftY\":
-        96.423828125,\n\t\t\t\t\t\"leftEyeCornerRightX\": 358.22526041667,\n\t\t\t\t\t\"leftEyeCornerRightY\":
-        98.757161458333,\n\t\t\t\t\t\"rightEyeCornerLeftX\": 374.64518229167,\n\t\t\t\t\t\"rightEyeCornerLeftY\":
-        101.00390625,\n\t\t\t\t\t\"rightEyeCornerRightX\": 384.77604166667,\n\t\t\t\t\t\"rightEyeCornerRightY\":
-        102.22526041667,\n\t\t\t\t\t\"rightEarTragusX\": -1,\n\t\t\t\t\t\"rightEarTragusY\":
-        -1,\n\t\t\t\t\t\"leftEarTragusX\": -1,\n\t\t\t\t\t\"leftEarTragusY\": -1,\n\t\t\t\t\t\"leftEyeBrowLeftX\":
-        343.72506249672,\n\t\t\t\t\t\"leftEyeBrowLeftY\": 89.824400265891,\n\t\t\t\t\t\"leftEyeBrowMiddleX\":
-        353.83409281874,\n\t\t\t\t\t\"leftEyeBrowMiddleY\": 89.361984115826,\n\t\t\t\t\t\"leftEyeBrowRightX\":
-        362.56192234923,\n\t\t\t\t\t\"leftEyeBrowRightY\": 92.366489433952,\n\t\t\t\t\t\"rightEyeBrowLeftX\":
-        376.85328963705,\n\t\t\t\t\t\"rightEyeBrowLeftY\": 94.751815942951,\n\t\t\t\t\t\"rightEyeBrowMiddleX\":
-        385.1078073733,\n\t\t\t\t\t\"rightEyeBrowMiddleY\": 94.495792729262,\n\t\t\t\t\t\"rightEyeBrowRightX\":
-        390.3081895317,\n\t\t\t\t\t\"rightEyeBrowRightY\": 96.567593920138,\n\t\t\t\t\t\"nostrilLeftHoleBottomX\":
-        362.57886559845,\n\t\t\t\t\t\"nostrilLeftHoleBottomY\": 119.3120002279,\n\t\t\t\t\t\"nostrilRightHoleBottomX\":
-        370.9792503321,\n\t\t\t\t\t\"nostrilRightHoleBottomY\": 121.35898628011,\n\t\t\t\t\t\"nostrilLeftSideX\":
-        358.00855790266,\n\t\t\t\t\t\"nostrilLeftSideY\": 115.95523496959,\n\t\t\t\t\t\"nostrilRightSideX\":
-        373.13639258363,\n\t\t\t\t\t\"nostrilRightSideY\": 118.9101100104,\n\t\t\t\t\t\"lipCornerLeftX\":
-        353.13864433023,\n\t\t\t\t\t\"lipCornerLeftY\": 131.73795937417,\n\t\t\t\t\t\"lipLineMiddleX\":
-        365.36910610172,\n\t\t\t\t\t\"lipLineMiddleY\": 132.4751662203,\n\t\t\t\t\t\"lipCornerRightX\":
-        374.33903936483,\n\t\t\t\t\t\"lipCornerRightY\": 133.68568487176,\n\t\t\t\t\t\"pitch\":
-        2.07513157518,\n\t\t\t\t\t\"yaw\": -17.934877012782,\n\t\t\t\t\t\"roll\":
-        7.5354338308672\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"topLeftX\": 516,\n\t\t\t\t\t\"topLeftY\":
-        34,\n\t\t\t\t\t\"width\": 96,\n\t\t\t\t\t\"height\": 96,\n\t\t\t\t\t\"leftEyeCenterX\":
-        547.6,\n\t\t\t\t\t\"leftEyeCenterY\": 74.4,\n\t\t\t\t\t\"rightEyeCenterX\":
-        580,\n\t\t\t\t\t\"rightEyeCenterY\": 64.4,\n\t\t\t\t\t\"noseTipX\": 564.23147949035,\n\t\t\t\t\t\"noseTipY\":
-        91.061818090372,\n\t\t\t\t\t\"noseBtwEyesX\": 559.85138496241,\n\t\t\t\t\t\"noseBtwEyesY\":
-        67.292694708019,\n\t\t\t\t\t\"chinTipX\": 578.72466240275,\n\t\t\t\t\t\"chinTipY\":
-        125.25547165783,\n\t\t\t\t\t\"leftEyeCornerLeftX\": 540.2,\n\t\t\t\t\t\"leftEyeCornerLeftY\":
-        75.575,\n\t\t\t\t\t\"leftEyeCornerRightX\": 552.85625,\n\t\t\t\t\t\"leftEyeCornerRightY\":
-        71.66875,\n\t\t\t\t\t\"rightEyeCornerLeftX\": 573.6125,\n\t\t\t\t\t\"rightEyeCornerLeftY\":
-        65.2625,\n\t\t\t\t\t\"rightEyeCornerRightX\": 586.1125,\n\t\t\t\t\t\"rightEyeCornerRightY\":
-        60.85,\n\t\t\t\t\t\"rightEarTragusX\": 614.99694573172,\n\t\t\t\t\t\"rightEarTragusY\":
-        75.808622428921,\n\t\t\t\t\t\"leftEarTragusX\": -1,\n\t\t\t\t\t\"leftEarTragusY\":
-        -1,\n\t\t\t\t\t\"leftEyeBrowLeftX\": 530.85071272266,\n\t\t\t\t\t\"leftEyeBrowLeftY\":
-        68.622717032231,\n\t\t\t\t\t\"leftEyeBrowMiddleX\": 538.95090117278,\n\t\t\t\t\t\"leftEyeBrowMiddleY\":
-        65.901227781742,\n\t\t\t\t\t\"leftEyeBrowRightX\": 551.01689547039,\n\t\t\t\t\t\"leftEyeBrowRightY\":
-        64.2511930865,\n\t\t\t\t\t\"rightEyeBrowLeftX\": 565.95581462711,\n\t\t\t\t\t\"rightEyeBrowLeftY\":
-        58.631067255059,\n\t\t\t\t\t\"rightEyeBrowMiddleX\": 578.54896562638,\n\t\t\t\t\t\"rightEyeBrowMiddleY\":
-        51.395189018273,\n\t\t\t\t\t\"rightEyeBrowRightX\": 591.69498505067,\n\t\t\t\t\t\"rightEyeBrowRightY\":
-        49.382289089633,\n\t\t\t\t\t\"nostrilLeftHoleBottomX\": 562.98287760849,\n\t\t\t\t\t\"nostrilLeftHoleBottomY\":
-        96.289081684756,\n\t\t\t\t\t\"nostrilRightHoleBottomX\": 572.8845363655,\n\t\t\t\t\t\"nostrilRightHoleBottomY\":
-        93.56330714803,\n\t\t\t\t\t\"nostrilLeftSideX\": 558.47705919767,\n\t\t\t\t\t\"nostrilLeftSideY\":
-        95.399059746207,\n\t\t\t\t\t\"nostrilRightSideX\": 577.5589315315,\n\t\t\t\t\t\"nostrilRightSideY\":
-        89.588930725593,\n\t\t\t\t\t\"lipCornerLeftX\": 563.38431042726,\n\t\t\t\t\t\"lipCornerLeftY\":
-        113.58233958702,\n\t\t\t\t\t\"lipLineMiddleX\": 572.38309138722,\n\t\t\t\t\t\"lipLineMiddleY\":
-        109.95797253927,\n\t\t\t\t\t\"lipCornerRightX\": 584.62623301446,\n\t\t\t\t\t\"lipCornerRightY\":
-        107.0464800996,\n\t\t\t\t\t\"pitch\": 4.2484231422416,\n\t\t\t\t\t\"yaw\":
-        21.926953273675,\n\t\t\t\t\t\"roll\": -17.483671086395\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t]\n}"
+      string: '{"images":[{"status":"Complete","width":624,"height":352,"file":"History_First_Combat_By_Black_Pilots_Speech_SF_still_624x352.jpg","faces":[{"topLeftX":339,"topLeftY":84,"chinTipX":362,"rightEyeCenterX":354,"yaw":-9,"chinTipY":147,"confidence":0.99954,"height":57,"rightEyeCenterY":97,"width":57,"leftEyeCenterY":101,"leftEyeCenterX":381,"pitch":-25,"attributes":{"asian":0.00013,"gender":{"type":"M"},"age":37,"hispanic":0.00028,"other":3.0e-5,"black":0.99955,"white":0},"face_id":1,"quality":0.50623,"roll":7},{"topLeftX":434,"topLeftY":66,"chinTipX":478,"rightEyeCenterX":453,"yaw":14,"chinTipY":134,"confidence":0.9994,"height":66,"rightEyeCenterY":85,"width":66,"leftEyeCenterY":77,"leftEyeCenterX":478,"pitch":1,"attributes":{"asian":0.20121,"gender":{"type":"M"},"age":30,"hispanic":0.02151,"other":0.06071,"black":0.71121,"white":0.00537},"face_id":2,"quality":-0.63,"roll":-14},{"topLeftX":533,"topLeftY":47,"chinTipX":580,"rightEyeCenterX":550,"yaw":3,"chinTipY":131,"confidence":0.99259,"height":86,"rightEyeCenterY":73,"width":85,"leftEyeCenterY":64,"leftEyeCenterX":586,"pitch":-23,"attributes":{"asian":0.05638,"gender":{"type":"M"},"age":25,"hispanic":0.14032,"other":0.12298,"black":0.36599,"white":0.31433},"face_id":3,"quality":-1.06915,"roll":-11}]}]}'
     http_version: 
-  recorded_at: Sat, 19 Jul 2014 16:04:56 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 29 Mar 2017 00:30:34 GMT
+recorded_with: VCR 3.0.3

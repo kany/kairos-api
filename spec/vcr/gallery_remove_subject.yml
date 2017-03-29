@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: http://api.kairos.io/gallery/remove_subject
+    uri: https://api.kairos.com/gallery/remove_subject
     body:
       encoding: UTF-8
       string: '{"gallery_name":"randomgallery","subject_id":"image123abc"}'
     headers:
       User-Agent:
-      - Faraday v0.8.9
+      - Faraday v0.8.11
       Content-Type:
       - application/x-www-form-urlencoded
       App-Id:
@@ -24,20 +24,30 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - ngx_openresty/1.2.8.6
-      Date:
-      - Tue, 05 Aug 2014 03:32:27 GMT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,app_key,app_id,api_key
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Api-Canonical:
+      - 58db062bd3f603872228
       Content-Type:
-      - text/html; charset=UTF-8
-      Transfer-Encoding:
-      - chunked
+      - application/json
+      Date:
+      - Wed, 29 Mar 2017 00:56:11 GMT
+      Server:
+      - nginx/1.10.0 (Ubuntu)
+      Content-Length:
+      - '98'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: "{\n\t\"status\": \"complete\",\n\t\"message\": \"subject id image123abc
-        has been successfully removed\"\n}"
+      string: '{"status":"Complete","message":"subject id image123abc has been successfully
+        removed"}'
     http_version: 
-  recorded_at: Tue, 05 Aug 2014 03:32:25 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 29 Mar 2017 00:56:12 GMT
+recorded_with: VCR 3.0.3

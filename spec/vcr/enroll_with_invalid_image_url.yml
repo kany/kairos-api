@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: http://api.kairos.io/enroll
+    uri: https://api.kairos.com/enroll
     body:
       encoding: UTF-8
       string: '{"url":"https://some.image.url/123abc.jpg","subject_id":"image123abc","gallery_name":"randomgallery"}'
     headers:
       User-Agent:
-      - Faraday v0.8.9
+      - Faraday v0.8.11
       Content-Type:
       - application/x-www-form-urlencoded
       App-Id:
@@ -24,21 +24,29 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - ngx_openresty/1.2.8.6
-      Date:
-      - Sat, 19 Jul 2014 03:24:18 GMT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,app_key,app_id,api_key
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Api-Canonical:
+      - 58db00919e1412101429
       Content-Type:
-      - text/html; charset=UTF-8
+      - text/html
+      Date:
+      - Wed, 29 Mar 2017 00:32:17 GMT
+      Server:
+      - nginx/1.10.0 (Ubuntu)
       Content-Length:
-      - '178'
+      - '78'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: "{\n\t\t\t\t\t\t\t    \"images\": [\n\t\t\t\t\t\t\t        {\n\t\t\t\t\t\t\t
-        \           \"status\": \"failure\",\n\t\t\t\t\t\t\t            \"message\":
-        \"no face(s) found in image\"\n\t\t\t\t\t\t\t        }\n\t\t\t\t\t\t\t    ]\n\t\t\t\t\t\t\t}"
+      string: '{"Errors":[{"ErrCode":5001,"Message":"invalid url was sent"}]}'
     http_version: 
-  recorded_at: Sat, 19 Jul 2014 03:24:09 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 29 Mar 2017 00:32:17 GMT
+recorded_with: VCR 3.0.3

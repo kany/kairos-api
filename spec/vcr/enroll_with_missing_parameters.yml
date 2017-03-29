@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: http://api.kairos.io/enroll
+    uri: https://api.kairos.com/enroll
     body:
       encoding: UTF-8
       string: '{"url":"https://some.image.url/123abc.jpg","subject_id":"image123abc"}'
     headers:
       User-Agent:
-      - Faraday v0.8.9
+      - Faraday v0.8.11
       Content-Type:
       - application/x-www-form-urlencoded
       App-Id:
@@ -24,20 +24,30 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - ngx_openresty/1.2.8.6
-      Date:
-      - Sat, 19 Jul 2014 03:24:01 GMT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,app_key,app_id,api_key
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Api-Canonical:
+      - 58db006e1ce4d0554328
       Content-Type:
-      - text/html; charset=UTF-8
+      - text/html
+      Date:
+      - Wed, 29 Mar 2017 00:31:42 GMT
+      Server:
+      - nginx/1.10.0 (Ubuntu)
       Content-Length:
-      - '129'
+      - '122'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: "{\n\t\"Errors\": [\n\t\t{\n\t\t\t\"ErrorCode\": 5006,\n\t\t\t\"Message\":
-        \"the following required parameter is not included:  gallery_name\"\n\t\t}\n\t]\n}"
+      string: "{\n\t\"Errors\": [\n\t\t{\n\t\t\t\"ErrCode\": 1002,\n\t\t\t\"Message\":
+        \"gallery_name one or more required parameters are missing\"\n\t\t}\n\t]\n}"
     http_version: 
-  recorded_at: Sat, 19 Jul 2014 03:23:52 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 29 Mar 2017 00:31:42 GMT
+recorded_with: VCR 3.0.3

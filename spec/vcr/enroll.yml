@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: http://api.kairos.io/enroll
+    uri: https://api.kairos.com/enroll
     body:
       encoding: UTF-8
-      string: '{"url":"https://some.image.url/123abc.jpg","subject_id":"image123abc","gallery_name":"randomgallery"}'
+      string: '{"url":"http://www.imperialteutonicorder.com/sitebuildercontent/sitebuilderpictures/jesus4.jpg","subject_id":"image123abc","gallery_name":"randomgallery"}'
     headers:
       User-Agent:
-      - Faraday v0.8.9
+      - Faraday v0.8.11
       Content-Type:
       - application/x-www-form-urlencoded
       App-Id:
@@ -24,21 +24,29 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - ngx_openresty/1.2.8.6
-      Date:
-      - Sat, 19 Jul 2014 03:10:11 GMT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,app_key,app_id,api_key
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Api-Canonical:
+      - 58db018bca97c2123450
       Content-Type:
-      - text/html; charset=UTF-8
+      - application/json
+      Date:
+      - Wed, 29 Mar 2017 00:36:28 GMT
+      Server:
+      - nginx/1.10.0 (Ubuntu)
       Content-Length:
-      - '218'
+      - '269'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: "{\n\t\"images\": [\n\t\t{\n\t\t\t\"time\": 2.02606,\n\t\t\t\"transaction\":
-        {\n\t\t\t\t\"status\": \"Complete\",\n\t\t\t\t\"face_id\": \"7d3a0571cb8c59d5be3fee2c19fff4a3\",\n\t\t\t\t\"subject_id\":
-        \"image123abc\",\n\t\t\t\t\"gallery_name\": \"randomgallery\"\n\t\t\t}\n\t\t}\n\t]\n}"
+      string: '{"images":[{"attributes":{"asian":8.0e-5,"gender":{"type":"M"},"age":27,"hispanic":0.01172,"other":0.00106,"black":0.00075,"white":0.9864},"transaction":{"status":"success","topLeftX":94,"topLeftY":98,"gallery_name":"randomgallery","timestamp":"1490747788528","height":115,"quality":0.52866,"confidence":0.99988,"subject_id":"image123abc","width":116,"face_id":1}}]}'
     http_version: 
-  recorded_at: Sat, 19 Jul 2014 03:10:02 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 29 Mar 2017 00:36:28 GMT
+recorded_with: VCR 3.0.3

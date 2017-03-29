@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: http://api.kairos.io/gallery/remove_subject
+    uri: https://api.kairos.com/gallery/remove_subject
     body:
       encoding: UTF-8
-      string: '{"gallery_name":"gemtest"}'
+      string: '{"gallery_name":"randomgallery"}'
     headers:
       User-Agent:
-      - Faraday v0.8.9
+      - Faraday v0.8.11
       Content-Type:
       - application/x-www-form-urlencoded
       App-Id:
@@ -24,20 +24,29 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - ngx_openresty/1.2.8.6
-      Date:
-      - Sat, 19 Jul 2014 06:36:07 GMT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,app_key,app_id,api_key
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Api-Canonical:
+      - 58db059f520947405798
       Content-Type:
-      - text/html; charset=UTF-8
+      - application/json
+      Date:
+      - Wed, 29 Mar 2017 00:53:51 GMT
+      Server:
+      - nginx/1.10.0 (Ubuntu)
       Content-Length:
-      - '127'
+      - '83'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: "{\n\t\"Errors\": [\n\t\t{\n\t\t\t\"ErrorCode\": 5006,\n\t\t\t\"Message\":
-        \"the following required parameter is not included:  subject_id\"\n\t\t}\n\t]\n}"
+      string: '{"Errors":[{"Message":"subject id was not found","ErrCode":5003}]}'
     http_version: 
-  recorded_at: Sat, 19 Jul 2014 06:35:58 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 29 Mar 2017 00:53:51 GMT
+recorded_with: VCR 3.0.3

@@ -19,16 +19,16 @@ describe Kairos::Client do
       context 'with missing parameters' do
         it 'should not remove subject' do
           VCR.use_cassette('gallery_remove_subject_with_missing_parameters') do
-            response = @client.gallery_remove_subject(:gallery_name => 'gemtest')
-            response.should eq({"Errors"=>[{"ErrorCode"=>5006, "Message"=>"the following required parameter is not included:  subject_id"}]})
+            response = @client.gallery_remove_subject(:gallery_name => 'randomgallery')
+            response.should eq({"Errors"=>[{"Message"=>"subject id was not found", "ErrCode"=>5003}]})
           end
         end
       end
       context 'with unmatched subject_id' do
         it 'should accept any subject and try to remove it, if it exists' do
           VCR.use_cassette('gallery_remove_subject_with_unmatched_subject') do
-            response = @client.gallery_remove_subject(:gallery_name => 'gemtest', :subject_id => 'abcdefghi')
-            response.should eq({"status"=>"complete", "message"=>"subject id abcdefghi has been successfully removed"})
+            response = @client.gallery_remove_subject(:gallery_name => 'randomgallery', :subject_id => 'abcdefghi')
+            response.should eq("Errors"=>[{"Message"=>"subject id was not found", "ErrCode"=>5003}])
           end
         end
       end
@@ -40,7 +40,7 @@ describe Kairos::Client do
         end
         describe 'response' do
           it 'subject is removed from gallery' do
-            @response.should eq({"status"=>"complete", "message"=>"subject id image123abc has been successfully removed"})
+            @response.should eq({"status"=>"Complete", "message"=>"subject id image123abc has been successfully removed"})
           end
         end
       end

@@ -20,7 +20,7 @@ describe Kairos::Client do
         it 'should not recognize an image' do
           VCR.use_cassette('recognize_with_missing_parameters') do
             response = @client.recognize(:url => 'https://some.image.url/123abc.jpg')
-            response.should eq({"images"=>[{"status"=>"failure", "message"=>{"errors"=>{"gallery_id"=>"gallery_id field required"}}}]})
+            response.should eq({"Errors"=>[{"ErrCode"=>1002, "Message"=>"gallery_name one or more required parameters are missing"}]})
           end
         end
       end
@@ -28,26 +28,31 @@ describe Kairos::Client do
         it 'should not recognize an image' do
           VCR.use_cassette('recognize_with_invalid_image_url') do
             response = @client.recognize(:url => 'https://some.image.url/123abc.jpg', :gallery_name => 'randomgallery')
-            response.should eq({"images"=>[{"status"=>"failure", "message"=>"no face(s) found in image"}]})
+            response.should eq({"Errors"=>[{"ErrCode"=>5001, "Message"=>"invalid url was sent"}]})
           end
         end
       end
       context 'with only url and gallery_name parameters with unrecognizable image' do
         before(:each) do
+          VCR.use_cassette('recognize_enroll_image_first') do
+            @response = @client.enroll(:url => 'http://www.imperialteutonicorder.com/sitebuildercontent/sitebuilderpictures/jesus4.jpg', :subject_id => 'image123abc', :gallery_name => 'randomgallery')
+          end
+
           VCR.use_cassette('recognize_with_unrecognizable_image') do
             @response = @client.recognize(:url => 'http://upload.wikimedia.org/wikipedia/commons/f/f9/Obama_portrait_crop.jpg', :gallery_name => 'randomgallery')
           end
         end
+
         describe 'response' do
           it 'should not recognize an image' do
-            @response.should eq("INVALID_JSON: {\n\t\"images\": [\n\t\t{\n\t\t\t\"transaction\": {\n\t\t\t\t\"status\": \"failure\",\n\t\t\t\t\"message\": \"No match found\",\n\t\t\t\t\"subject\": image123abc,\n\t\t\t\t\"confidence\": 0.56,\n\t\t\t\t\"threshold\": 0.8\n\t\t\t}\n\t\t}\n\t]\n}")
+            @response.should eq({"images" => [{"transaction"=>{"status"=>"failure", "topLeftX"=>433, "topLeftY"=>536, "gallery_name"=>"randomgallery", "height"=>722, "width"=>722, "face_id"=>1, "quality"=>0.91429, "message"=>"No match found"}}]})
           end
         end
       end
       context 'with only url and gallery_name parameters' do
         before(:each) do
           VCR.use_cassette('recognize_with_url_and_gallery_name') do
-            @response = @client.recognize(:url => 'https://some.image.url/123abc.jpg', :gallery_name => 'randomgallery')
+            @response = @client.recognize(:url => 'http://www.imperialteutonicorder.com/sitebuildercontent/sitebuilderpictures/jesus4.jpg', :gallery_name => 'randomgallery')
           end
         end
         describe 'response' do
@@ -59,7 +64,7 @@ describe Kairos::Client do
       context 'with required parameters' do
         before(:each) do
           VCR.use_cassette('recognize') do
-            @response = @client.recognize(:url => 'https://some.image.url/123abc.jpg', :gallery_name => 'randomgallery', :threshold => '.2', :max_num_results => '5')
+            @response = @client.recognize(:url => 'http://www.imperialteutonicorder.com/sitebuildercontent/sitebuilderpictures/jesus4.jpg', :gallery_name => 'randomgallery', :threshold => '.2', :max_num_results => '5')
           end
         end
         describe 'response' do
@@ -67,27 +72,13 @@ describe Kairos::Client do
             @response.first[0].should eq('images')
           end
           it 'contains 3 hash keys' do
-            @response.first[1][0].keys.should include('time','transaction','candidates')
-          end
-          it 'contains how long it took to complete the task' do
-            @response.first[1][0]['time'].should eq(2.02489)
+            @response.first[1][0].keys.should include('transaction','candidates')
           end
           it 'contains the status' do
             @response.first[1][0]['transaction']['status'].should eq('success')
           end
-          it 'contains the api assigned face_id' do
-            @response.first[1][0]['transaction']['face_id'].should eq('cc9424ff049026675b9f1ecccec2c076')
-          end
-          it 'contains the subject_id you assigned' do
-            @response.first[1][0]['transaction']['subject'].should eq('image123abc')
-          end
           it 'contains the gallery_name you assigned' do
             @response.first[1][0]['transaction']['gallery_name'].should eq('randomgallery')
-          end
-          it 'contains possible other candidates' do
-            @response.first[1][0]['candidates'].size.should eq(5)
-            @response.first[1][0]['candidates'].class.should eq(Array)
-            @response.first[1][0]['candidates'].should eq([{"image456abc"=>"1"}, {"image789abc"=>"2"}, {"image012abc"=>"3"}, {"image345abc"=>"4"}, {"image678abc"=>"5"}])
           end
         end
       end

@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: http://api.kairos.io/detect
+    uri: https://api.kairos.com/detect
     body:
       encoding: UTF-8
       string: '{"selector":"FULL"}'
     headers:
       User-Agent:
-      - Faraday v0.8.9
+      - Faraday v0.8.11
       Content-Type:
       - application/x-www-form-urlencoded
       App-Id:
@@ -21,22 +21,22 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 403
+      message: Forbidden
     headers:
-      Server:
-      - ngx_openresty/1.2.8.6
-      Date:
-      - Tue, 05 Aug 2014 03:24:15 GMT
       Content-Type:
-      - text/html; charset=UTF-8
-      Transfer-Encoding:
-      - chunked
+      - text/plain; charset=us-ascii
+      Date:
+      - Wed, 29 Mar 2017 00:24:22 GMT
+      Server:
+      - nginx/1.10.0 (Ubuntu)
+      Content-Length:
+      - '21'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"errors":[{"Errcode":5001,"Message":"some unknown service error"}]}'
+      string: Authentication failed
     http_version: 
-  recorded_at: Tue, 05 Aug 2014 03:24:13 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 29 Mar 2017 00:24:22 GMT
+recorded_with: VCR 3.0.3

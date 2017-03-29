@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://api.kairos.io/gallery/list_all
+    uri: https://api.kairos.com/gallery/list_all
     body:
       encoding: US-ASCII
       string: ''
@@ -15,25 +15,36 @@ http_interactions:
       - abc1234
       App-Key:
       - asdfadsfasdfasdfasdf
+      Expect:
+      - ''
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - ngx_openresty/1.2.8.6
-      Date:
-      - Sun, 20 Jul 2014 03:33:23 GMT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,app_key,app_id,api_key
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Api-Canonical:
+      - 58db039a56fb10367413
       Content-Type:
-      - text/html; charset=UTF-8
+      - application/json
+      Date:
+      - Wed, 29 Mar 2017 00:45:14 GMT
+      Server:
+      - nginx/1.10.0 (Ubuntu)
       Content-Length:
-      - '81'
+      - '53'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: "{\n\t\"time\": 0.00808,\n\t\"status\": \"Complete\",\n\t\"gallery_ids\":
-        [\n\t\t\"testgallery\"\n\t]\n}"
+      string: '{"status":"Complete","gallery_ids":["randomgallery"]}'
     http_version: 
-  recorded_at: Sun, 20 Jul 2014 03:33:12 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 29 Mar 2017 00:45:14 GMT
+recorded_with: VCR 3.0.3

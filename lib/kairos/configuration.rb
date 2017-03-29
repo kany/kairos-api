@@ -9,12 +9,12 @@ module Kairos
     DEFAULT_APP_ID         = nil
     DEFAULT_APP_KEY        = nil
 
-    ENROLL                 = 'http://api.kairos.com/enroll'
-    RECOGNIZE              = 'http://api.kairos.com/recognize'
-    DETECT                 = 'http://api.kairos.com/detect'
-    GALLERY_LIST_ALL       = 'http://api.kairos.com/gallery/list_all'
-    GALLERY_VIEW           = 'http://api.kairos.com/gallery/view'
-    GALLERY_REMOVE_SUBJECT = 'http://api.kairos.com/gallery/remove_subject'
+    ENROLL                 = 'https://api.kairos.com/enroll'
+    RECOGNIZE              = 'https://api.kairos.com/recognize'
+    DETECT                 = 'https://api.kairos.com/detect'
+    GALLERY_LIST_ALL       = 'https://api.kairos.com/gallery/list_all'
+    GALLERY_VIEW           = 'https://api.kairos.com/gallery/view'
+    GALLERY_REMOVE_SUBJECT = 'https://api.kairos.com/gallery/remove_subject'
 
     # Build accessor methods for every config options so we can do this, for example:
     #   Kairos.format = :xml
